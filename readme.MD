@@ -842,8 +842,38 @@ Mihomo supports several types of proxy groups, each serving a different purpose:
 * **relay**: Chains multiple proxies together for traffic routing.
 ---
 For detailed information and examples on configuring each type of proxy group, you can refer to the official Mihomo documentation on Proxy Groups: ([wiki.metacubex.one][1]).
-If you have specific scenarios or configurations in mind, feel free to ask, and I can provide more tailored guidance!
 [1]: https://wiki.metacubex.one/en/config/proxy-groups/?utm_source=chatgpt.com "proxy-groups configuration - mihomo docs"
 ---
-
+In Mihomo, the **relay** proxy group enables the chaining of multiple proxy nodes, allowing traffic to traverse through a sequence of proxies before reaching its destination. This setup can enhance security, obfuscate traffic patterns, and bypass certain network restrictions.
+---
+### 🔗 **How Relay Works**
+When configured, traffic flows through a series of proxies in the specified order. For example:
+```
+Clash → http → vmess → ss1 → ss2 → Internet
+```
+In this chain, each proxy node forwards the traffic to the next, with the final destination being the internet.
+---
+### ⚠️ **Important Considerations**
+* **Deprecation**: The relay strategy is being deprecated. It is recommended to use the `dialer-proxy` strategy instead. ([wiki.metacubex.one][1])
+* **UDP Support**: Relay supports UDP transmission, provided that both the head and tail nodes of the proxy chain support UDP over TCP. Currently, protocols like `vmess`, `vless`, `trojan`, `ss`, `ssr`, and `tuic` support UDP. ([wiki.metacubex.one][1])
+* **WireGuard Compatibility**: WireGuard does not support usage in relay configurations. It's advisable to use `dialer-proxy` for such setups. ([wiki.metacubex.one][1])
+---
+### 🛠️ **Configuration Example**
+```yaml
+proxy-groups:
+  - name: "relay"
+    type: relay
+    proxies:
+      - http
+      - vmess
+      - ss1
+      - ss2
+```
+In this configuration, the `relay` proxy group chains the `http`, `vmess`, `ss1`, and `ss2` proxies.
+---
+### 🔄 **Transition to dialer-proxy**
+Given the deprecation of the relay strategy, it's recommended to transition to the `dialer-proxy` strategy for chaining proxies. This approach offers more flexibility and is better supported in recent versions of Mihomo.
+---
+[1]: https://wiki.metacubex.one/en/config/proxy-groups/relay/?utm_source=chatgpt.com "Relay - mihomo docs"
+---
 
