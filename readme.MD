@@ -876,4 +876,87 @@ Given the deprecation of the relay strategy, it's recommended to transition to t
 ---
 [1]: https://wiki.metacubex.one/en/config/proxy-groups/relay/?utm_source=chatgpt.com "Relay - mihomo docs"
 ---
-
+In Mihomo, **sub-rule** is a configuration option that allows you to define a set of routing rules under a specific name, which can then be referenced within other routing rules. This modular approach enhances the flexibility and maintainability of your routing configurations.
+---
+### 🔧 Structure of a Sub-Rule
+A sub-rule is defined under the `sub-rules` section in your configuration file. Each sub-rule is given a unique name, followed by a list of routing rules. These rules can include domain-based matches, IP-based matches, or other criteria, each associated with a specific proxy or action.
+**Example Configuration:**
+```yaml
+sub-rules:
+  rule1:
+    - DOMAIN-SUFFIX,baidu.com,DIRECT
+    - MATCH,PROXY
+  sub-rule2:
+    - IP-CIDR,1.1.1.1/32,REJECT
+    - IP-CIDR,8.8.8.8/32,ss1
+    - DOMAIN,dns.alidns.com,REJECT
+```
+---
+### 🧩 Key Components
+* **rule1** and **sub-rule2**: These are the unique names assigned to each sub-rule.
+* **DOMAIN-SUFFIX, baidu.com, DIRECT**: This rule directs traffic to `baidu.com` to bypass the proxy and connect directly.
+* **MATCH, PROXY**: This default rule applies the `PROXY` strategy to all other traffic that doesn't match previous rules.
+* **IP-CIDR, 1.1.1.1/32, REJECT**: This rule blocks traffic to the specific IP address `1.1.1.1`.
+* **DOMAIN, dns.alidns.com, REJECT**: This rule blocks traffic to the domain `dns.alidns.com`.
+---
+### 🔄 Referencing Sub-Rules
+Once defined, sub-rules can be referenced within other routing rules using the `SUB-RULE` match type. This allows for the inclusion of complex rule sets within a single routing rule.
+**Example Usage:**
+```yaml
+rules:
+  - DOMAIN-SUFFIX,google.com,PROXY
+  - DOMAIN-KEYWORD,facebook,REJECT
+  - SUB-RULE,rule1
+  - SUB-RULE,sub-rule2
+```
+In this example, traffic to `google.com` is proxied, traffic with `facebook` in the domain is rejected, and then the rules from `rule1` and `sub-rule2` are applied.
+---
+### ⚠️ Important Considerations
+* **Parentheses Usage**: When using logical operators like `AND`, `OR`, or `NOT` in conjunction with sub-rules, ensure that parentheses are used correctly to define the scope of operations.
+* **Rule Matching Order**: The order of rules matters. Mihomo processes rules sequentially, and once a match is found, subsequent rules are not evaluated.
+* **DNS Resolution**: Be cautious when using domain-based rules, as DNS resolution may occur before rule matching. This can lead to unexpected behavior if not properly configured.
+---
+For more detailed information and advanced configurations, you can refer to the official Mihomo documentation on sub-rules: ([wiki.metacubex.one][1])
+[1]: https://wiki.metacubex.one/en/config/sub-rule/?utm_source=chatgpt.com "sub-rule - mihomo docs"
+---
+In Mihomo, **tunnels** facilitate the forwarding of TCP/UDP traffic through specified local and target addresses, optionally routing through a defined proxy. This feature is particularly useful for scenarios like DNS forwarding or creating custom proxy chains.
+---
+### 🔧 Tunnel Configuration
+Tunnels can be defined in two formats: single-line and multi-line.
+#### Single-Line Format
+```yaml
+tunnels:
+  - tcp/udp,127.0.0.1:6553,8.8.8.8:53,proxy
+```
+In this format, the components are specified in a comma-separated list:
+* **network**: `tcp` or `udp`
+* **address**: Local listening address (e.g., `127.0.0.1:6553`)
+* **target**: Target address to forward traffic to (e.g., `8.8.8.8:53`)
+* **proxy**: Optional; name of the proxy or proxy group to route traffic through (e.g., `proxy`)
+#### Multi-Line Format
+```yaml
+tunnels:
+  - network: [tcp, udp]
+    address: 127.0.0.1:6553
+    target: 8.8.8.8:53
+    proxy: proxy
+```
+In this format, each component is specified on a separate line for clarity:
+* **network**: List of protocols (`tcp`, `udp`)
+* **address**: Local listening address
+* **target**: Target address
+* **proxy**: Optional; proxy or proxy group
+---
+### 📌 Example Use Case
+To forward DNS queries from your local machine to Google's DNS server via a proxy:
+```yaml
+tunnels:
+  - network: [udp]
+    address: 127.0.0.1:6553
+    target: 8.8.8.8:53
+    proxy: proxy
+```
+In this example, DNS requests sent to `127.0.0.1:6553` are forwarded to `8.8.8.8:53` through the specified `proxy`.
+---
+For more detailed information and advanced configurations, you can refer to the official Mihomo documentation on tunnels: ([wiki.metacubex.one][1])
+[1]: https://wiki.metacubex.one/en/config/tunnels/?utm_source=chatgpt.com "tunnels - mihomo docs"
