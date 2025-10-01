@@ -1,4 +1,3 @@
----
 
 ### ✅ **Clash.Meta Supported Rule Types**
 
