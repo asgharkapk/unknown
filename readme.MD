@@ -723,6 +723,127 @@ Routing rules → Outbound proxy → Internet
   ```
   *Note*: Offers flexibility for custom tunneling needs.
 ---
+### ✅ **Direct (`DIRECT`)**
+* **Description**: Allows data to exit directly without any proxy intervention.
+* **Use Case**: Ideal for traffic that doesn't require proxying, ensuring direct access to the internet.
+---
+### ❌ **Reject (`REJECT`)**
+* **Description**: Intercepts and blocks data from going out.
+* **Use Case**: Useful for blocking specific traffic or destinations, enhancing security or compliance.
+---
+### 🔕 **Reject-Drop (`REJECT-DROP`)**
+* **Description**: Silently drops the request without any response.
+* **Use Case**: Prevents detection of blocked traffic, useful in restrictive environments.
+---
+### 🔓 **Pass (`PASS`)**
+* **Description**: Skips this rule when matching, effectively bypassing the proxy.
+* **Use Case**: Allows certain traffic to bypass proxy rules, ensuring direct access when needed.
+---
+### ⚙️ **Compatible (`COMPATIBLE`)**
+* **Description**: Appears when no node is selected in the policy group filtering, equivalent to `DIRECT`.
+* **Use Case**: Provides a fallback option when no specific proxy is selected, ensuring traffic isn't inadvertently blocked.
+---
+These strategies allow for granular control over how traffic is handled, enabling you to tailor your proxy configuration to meet specific needs and scenarios.
+---
+## 🌐 **DNS Proxy**
+In Mihomo, the DNS proxy type is designed to handle DNS requests, allowing for domain resolution through specified servers. This is particularly useful when you want to control or route DNS queries separately from regular internet traffic.
+### Key Features:
+* **Domain Resolution**: Directs DNS queries to specified DNS servers.
+* **Proxying DNS Traffic**: Allows DNS requests to be routed through a proxy, enabling DNS-over-HTTPS (DoH) or DNS-over-TLS (DoT) configurations.
+* **Enhanced Privacy**: By routing DNS queries through a proxy, you can enhance privacy and security, preventing DNS leaks.
+### Example Configuration:
+```yaml
+proxies:
+  - name: "dns-out"
+    type: dns
+    server: "dns.example.com"
+    port: 53
+    udp: true
+    tls: true
+    dns-over-https: true
+    dns-over-tls: true
+```
+In this configuration, DNS queries are sent to `dns.example.com` over both UDP and TLS, with DNS-over-HTTPS enabled for enhanced privacy.
+---
+## 🔗 **Direct Proxy**
+The Direct proxy type in Mihomo is used to allow traffic to bypass the proxy and connect directly to the destination. This is useful for local network access or when certain traffic should not be proxied.
+### Key Features:
+* **Bypass Proxy**: Allows specified traffic to bypass the proxy and connect directly.
+* **Local Network Access**: Useful for accessing local network resources without routing through the proxy.
+* **Selective Routing**: Can be used in conjunction with routing rules to selectively bypass the proxy for specific destinations or protocols.
+### Example Configuration:
+```yaml
+proxies:
+  - name: "direct"
+    type: direct
+    udp: true
+    ip-version: ipv4
+    interface-name: eth0
+    routing-mark: 1234
+```
+Here, traffic is routed directly through the `eth0` interface, with the specified routing mark ensuring that only matching traffic bypasses the proxy.
+---
+## 🔄 **Combining DNS and Direct Proxies**
+You can combine DNS and Direct proxies to create a more granular and efficient routing setup. For instance, you might want DNS queries to be resolved through a secure DNS proxy while allowing the actual traffic to bypass the main proxy.
+### Example Combined Configuration:
+```yaml
+proxies:
+  - name: "dns-out"
+    type: dns
+    server: "dns.example.com"
+    port: 53
+    udp: true
+    tls: true
+    dns-over-https: true
+    dns-over-tls: true
 
+  - name: "direct"
+    type: direct
+    udp: true
+    ip-version: ipv4
+    interface-name: eth0
+    routing-mark: 1234
+```
+In this setup, DNS queries are securely resolved through `dns.example.com`, while the actual traffic is routed directly through the `eth0` interface, ensuring efficient and secure connections.
+---
+## 🔄 What Are Proxy Groups?
+In Mihomo, **Proxy Groups** are logical collections of outbound proxies that determine how traffic is routed based on specific strategies. They allow for flexible and dynamic management of outbound connections, enabling users to define rules for selecting proxies based on criteria like latency, availability, or geographical location.
+---
+## 🧩 Common Fields in Proxy Groups
+Each proxy group in Mihomo can include the following fields:
+* **name**: The name of the proxy group.
+* **type**: The type of the proxy group, which dictates its selection strategy.
+* **proxies**: A list of outbound proxies or other proxy groups included in this group.
+* **use**: References to proxy sets that provide additional proxies.
+* **url**: A health check test address to monitor the availability of proxies.
+* **interval**: The health check interval, in seconds.
+* **lazy**: If set to `true`, health checks are only performed when the proxy group is selected.
+* **timeout**: The health check timeout, in milliseconds.
+* **max-failed-times**: The maximum number of failures before triggering a forced health check.
+* **disable-udp**: Disables UDP for this proxy group.
+* **interface-name**: Specifies the outbound interface for the proxy group.
+* **routing-mark**: The routing mark attached when the proxy group is outbound.
+* **include-all**: Includes all outbound proxies and proxy sets, sorted by name.
+* **include-all-proxies**: Includes all outbound proxies, sorted by name.
+* **include-all-providers**: Includes all proxy sets, sorted by name.
+* **filter**: Filters nodes that meet keywords or regular expressions.
+* **exclude-filter**: Excludes nodes that meet keywords or regular expressions.
+* **exclude-type**: Excludes nodes based on node type.
+* **expected-status**: The expected HTTP response status code during health checks.
+* **hidden**: Returns `hidden` status in the API to hide the display of this proxy group.
+* **icon**: Returns the string input for `icon` in the API to display in this proxy group.
+---
+## 🧭 Types of Proxy Groups
+Mihomo supports several types of proxy groups, each serving a different purpose:
+* **select**: Allows manual selection of a proxy from the list.
+* **url-test**: Automatically selects the proxy with the best performance based on URL testing.
+* **fallback**: Provides a fallback proxy when the primary proxy fails.
+* **load-balance**: Distributes traffic evenly across multiple proxies.
+* **relay**: Chains multiple proxies together for traffic routing.
+---
+For detailed information and examples on configuring each type of proxy group, you can refer to the official Mihomo documentation on Proxy Groups: ([wiki.metacubex.one][1]).
+If you have specific scenarios or configurations in mind, feel free to ask, and I can provide more tailored guidance!
+[1]: https://wiki.metacubex.one/en/config/proxy-groups/?utm_source=chatgpt.com "proxy-groups configuration - mihomo docs"
+---
 
 
