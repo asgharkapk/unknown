@@ -1,6 +1,4 @@
-
 ### ✅ **Clash.Meta Supported Rule Types**
-
 * DOMAIN
 * DOMAIN-SUFFIX
 * DOMAIN-KEYWORD
@@ -21,11 +19,8 @@
 * RULE-SET
 * SCRIPT
 * MATCH
-
 ---
-
 ### ✅ **Clash.Meta Supported Inbounds**
-
 * SOCKS5
 * HTTP
 * Mixed (SOCKS + HTTP)
@@ -36,11 +31,13 @@
 * Tuic
 * Tunnel
 * TUN
-
 ---
-
+### ✅ **Clash.Meta Supports**
+ * sub-rules:
+ * listeners:
+ * proxy-groups:
+---
 ### ❌ **Not Supported by Clash.Meta (things Clash.Meta doesn’t do natively)**
-
 * Trojan inbound (only outbound)
 * VLESS inbound (only outbound)
 * gRPC inbound (only outbound, via VMess/VLESS over gRPC)
@@ -48,6 +45,12 @@
 * WireGuard (no direct inbound)
 * AnyVPN protocols (OpenVPN, L2TP, PPTP, IPSec, etc.)
 * Non-proxy listeners (FTP, SMTP, etc.)
-
+* domainStrategy
+* outboundTag
+* targetStrategy
+* inbounds
+* streamSettings
+* tag
+* inboundTag
 ---
-
+https://github.com/djoeni/Clash.Meta?utm_source=chatgpt.com
