@@ -960,3 +960,28 @@ In this example, DNS requests sent to `127.0.0.1:6553` are forwarded to `8.8.8.8
 ---
 For more detailed information and advanced configurations, you can refer to the official Mihomo documentation on tunnels: ([wiki.metacubex.one][1])
 [1]: https://wiki.metacubex.one/en/config/tunnels/?utm_source=chatgpt.com "tunnels - mihomo docs"
+---
+The `tcp-fragment` configuration in Clash.Meta allows you to fragment TCP packets, particularly useful for bypassing censorship mechanisms like the Great Firewall of China. This feature is especially effective when dealing with TLS client hello packets, which are often targeted by deep packet inspection systems.
+### 🔧 Configuration Parameters
+* **`packets`**: Specifies the type of packet to fragment.
+  * **`tlshello`**: Fragments the TLS client hello packet.
+* **`length`**: Defines the size of each fragment in bytes.
+  * For example, setting `"length": "6"` means each fragment will be 6 bytes.
+* **`interval`**: Sets the time interval between sending each fragment in milliseconds.
+  * A value of `"interval": "0"` indicates no delay between fragments.
+* **`maxSplit`**: Specifies the maximum number of fragments to send.
+  * Setting `"maxSplit": 6` allows up to 6 fragments.
+### 📄 Example Configuration
+```yaml
+tcp-fragment:
+  packets: "tlshello"
+  length: "6"
+  interval: "0"
+  maxSplit: 6
+```
+This configuration fragments the TLS client hello packet into 6-byte pieces, with no delay between fragments, and a maximum of 6 fragments.
+### ⚠️ Important Notes
+* **Compatibility**: Ensure that your Clash.Meta version supports the `tcp-fragment` feature.
+* **Network Impact**: Fragmenting packets can affect network performance and may be detected by advanced firewall systems. Use this feature judiciously.
+* **Testing**: After configuring, test the connection to ensure that fragmentation is effective and does not disrupt normal traffic.
+For more detailed information and updates, refer to the official Clash.Meta documentation and community discussions.
