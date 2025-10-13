@@ -25,6 +25,7 @@ Use responsibly and follow the game’s terms of service.
 - Lightweight frontend for displaying combat data from DamageCounter.
 - Shows team DPS, healing, and skill usage in real-time floating windows.
 - Supports multi-player monitoring and skill distribution analysis.
+![应用截图](https://raw.githubusercontent.com/Viemean/StarResonance.DPS/refs/heads/master/Assets/img.png)
 
 **[mrsnakke/BPSR-Meter](https://github.com/mrsnakke/BPSR-Meter)**
 - English-language desktop DPS/HPS meter overlay.
