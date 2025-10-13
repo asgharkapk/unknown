@@ -31,6 +31,7 @@ Use responsibly and follow the game’s terms of service.
 - English-language desktop DPS/HPS meter overlay.
 - Displays total damage, healing, contributions, critical hit rate, and max DPS.
 - Non-intrusive; overlays game window without affecting gameplay.
+![pic1](https://raw.githubusercontent.com/mrsnakke/BPSR-Meter/master/portada.png)
 
 **[tom228studio/StarResonanceDamageCounter-master](https://github.com/tom228studio/StarResonanceDamageCounter-master)**
 - Localized Russian fork of the original DamageCounter.
@@ -50,6 +51,7 @@ Use responsibly and follow the game’s terms of service.
 - Tauri-based frontend for displaying DPS and combat data.
 - Works as a companion to DamageCounter backend, visualizing real-time statistics.
 - Lightweight and responsive with simple UI controls for team data tracking.
+![pic2](https://raw.githubusercontent.com/ckylinmc/StarResonanceDamageCounterOverlay/main/assets/scrshot.png)
 
 **[tom228studio/StarResonanceDamageCounter-overlay-main](https://github.com/tom228studio/StarResonanceDamageCounter-overlay-main)**
 - Russian version of DamageCounter overlay supporting team monitoring.
@@ -118,6 +120,7 @@ Use responsibly and follow the game’s terms of service.
 - Bot plugin to provide notifications and event alerts.
 - Integrates with YuiChyanBot and updates players on in-game schedules.
 - Lightweight and easy to configure via JSON settings.
+![pic3](https://raw.githubusercontent.com/azmiao/StarResonanceNotice/main/截图.jpg)
 
 **[Xuan-cc/ShiroFisher-StarResonanceSmartFishing](https://github.com/Xuan-cc/ShiroFisher-StarResonanceSmartFishing)**
 - Python script to automate fishing gameplay.
@@ -148,11 +151,13 @@ Use responsibly and follow the game’s terms of service.
 - Plots incremental damage over time for team analysis.
 - Visualizes DPS trends using DamageCounter logs.
 - Does not capture live data; works with existing datasets.
+![pic5](https://private-user-images.githubusercontent.com/69706187/474307262-935a6edc-f511-4d1f-93c7-4ad54dc26572.png?jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NjAzNjQzMDUsIm5iZiI6MTc2MDM2NDAwNSwicGF0aCI6Ii82OTcwNjE4Ny80NzQzMDcyNjItOTM1YTZlZGMtZjUxMS00ZDFmLTkzYzctNGFkNTRkYzI2NTcyLnBuZz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNTEwMTMlMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjUxMDEzVDE0MDAwNVomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPTJjNWFlYmJiNmIwYmZmZDAxN2FmZDRmYWE1YjdmOWUxODA0OTZkZGVmNTQwYTZkOWZlNWZkMmEyZjI1NzQzMTImWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0In0.2VMZFeDxLY6sgGUfXpn1dbneUZI-_VS8yJzDR9NR-tI)
 
 **[xxfttkx/StarResonanceAutoHunt](https://github.com/xxfttkx/StarResonanceAutoHunt)**
 - Automates hunting encounters in-game.
 - Switches lines, starts battles, and logs loot efficiently.
 - Designed to reduce repetitive manual actions during farming.
+![pic4](https://raw.githubusercontent.com/xxfttkx/StarResonanceAutoHunt/main/gui.png)
 
 ---
 
