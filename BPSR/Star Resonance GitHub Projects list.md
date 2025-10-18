@@ -168,8 +168,8 @@ Use responsibly and follow the game’s terms of service.
 
 ---
 
-**bk360/BPSR-AutoFisher-V1**
-An automated fishing assistant for *Blue Protocol: Star Resonance (BPSR)*.
+[**bk360/BPSR-AutoFisher-V1**](https://github.com/bk360/BPSR-AutoFisher-V1)
+- An automated fishing assistant for *Blue Protocol: Star Resonance (BPSR)*.
 
 * Allows the player to start fishing automatically through a simple Python script (`python main.py`).
 * Detects when the fishing rod breaks and handles the “Continue Fishing” button automatically, reducing manual interaction.
@@ -177,8 +177,8 @@ An automated fishing assistant for *Blue Protocol: Star Resonance (BPSR)*.
 
 ---
 
-**Down98/BPSREngPatcher**
-A patching utility to enable English language support for *Blue Protocol: Star Resonance*.
+[**Down98/BPSREngPatcher**](https://github.com/Down98/BPSREngPatcher)
+- A patching utility to enable English language support for *Blue Protocol: Star Resonance*.
 
 * Requires installation of the .NET 8.0 Runtime environment.
 * Users must place the patcher executable inside the `AppData\LocalLow\bokura\Star\localsave` folder (where `localsave.bytes` exists).
@@ -186,8 +186,8 @@ A patching utility to enable English language support for *Blue Protocol: Star R
 
 ---
 
-**narrow-gua/BpsrDetector**
-A C#-based packet-sniffing and detection tool for BPSR.
+[**narrow-gua/BpsrDetector**](https://github.com/narrow-gua/BpsrDetector)
+- A C#-based packet-sniffing and detection tool for BPSR.
 
 * Inspired by the original open-source project by Dimole (`StarResonanceDamageCounter`).
 * Allows users to monitor BPSR data packets in real time, useful for developers and mod creators analyzing game behavior.
@@ -195,8 +195,8 @@ A C#-based packet-sniffing and detection tool for BPSR.
 
 ---
 
-**fishing-dev-sm/bpsr_automodule**
-A comprehensive OCR-powered optimizer for *BPSR* modules and attributes.
+[**fishing-dev-sm/bpsr_automodule**](https://github.com/fishing-dev-sm/bpsr_automodule)
+- A comprehensive OCR-powered optimizer for *BPSR* modules and attributes.
 
 * Uses Python, Flask, and OpenCV to analyze screenshots and optimize mod setups.
 * Offers a modern Web UI for drag-and-drop image uploads, real-time recognition, and result visualization.
@@ -206,8 +206,8 @@ A comprehensive OCR-powered optimizer for *BPSR* modules and attributes.
 
 ---
 
-**scylian/bpsr-autofish**
-A computer vision automation framework tailored for BPSR’s fishing mechanics.
+[**scylian/bpsr-autofish**](https://github.com/scylian/bpsr-autofish)
+- A computer vision automation framework tailored for BPSR’s fishing mechanics.
 
 * Implements precise mouse and keyboard control combined with OpenCV-based image detection.
 * Features advanced safety checks, fail-safe conditions, and coordinate validation for reliable automation.
@@ -216,8 +216,8 @@ A computer vision automation framework tailored for BPSR’s fishing mechanics.
 
 ---
 
-**fishing-dev-sm/bpsr_autofishing**
-An improved, vision-based automatic fishing script for *Star Resonance*.
+[**fishing-dev-sm/bpsr_autofishing**](https://github.com/fishing-dev-sm/bpsr_autofishing)
+- An improved, vision-based automatic fishing script for *Star Resonance*.
 
 * Uses pixel color analysis (HSV/BGR) to detect bites, reel timing, and “fish escaped” conditions.
 * Adapts to any 16:9 resolution with DPI scaling and automatic region-of-interest (ROI) adjustment.
@@ -227,8 +227,8 @@ An improved, vision-based automatic fishing script for *Star Resonance*.
 
 ---
 
-**viemahc/bpsr-countdowns**
-An event countdown tracker for the *Blue Protocol: Star Resonance* community.
+[**viemahc/bpsr-countdowns**](https://github.com/viemahc/bpsr-countdowns)
+- An event countdown tracker for the *Blue Protocol: Star Resonance* community.
 
 * Developed specifically for the STARWIND Guild to monitor upcoming in-game events.
 * Displays real-time countdowns for limited-time content, raids, and special seasonal events.
@@ -236,8 +236,8 @@ An event countdown tracker for the *Blue Protocol: Star Resonance* community.
 
 ---
 
-**ArtjomsBogatirjovs/bpsr-fishing**
-An external auto-fishing system for *Star Resonance* based on image recognition.
+[**ArtjomsBogatirjovs/bpsr-fishing**](https://github.com/ArtjomsBogatirjovs/bpsr-fishing)
+- An external auto-fishing system for *Star Resonance* based on image recognition.
 
 * Interacts only through the visible game UI using Windows API calls—no game memory or file modifications.
 * Uses AI-based fish detection and auto-casting for accurate and efficient fishing cycles.
@@ -247,8 +247,8 @@ An external auto-fishing system for *Star Resonance* based on image recognition.
 
 ---
 
-**s-now25/bpsr-skyward-guide**
-A detailed gameplay guide focused on the *Skyward Wind Knight* class in *BPSR*.
+[**s-now25/bpsr-skyward-guide**](https://github.com/s-now25/bpsr-skyward-guide)
+- A detailed gameplay guide focused on the *Skyward Wind Knight* class in *BPSR*.
 
 * Covers builds, rotations, skill setups, and aerial combat strategies.
 * Offers comprehensive explanations for wind-based mechanics and optimal stat balancing.
@@ -256,8 +256,8 @@ A detailed gameplay guide focused on the *Skyward Wind Knight* class in *BPSR*.
 
 ---
 
-**phiyuki/BPSR-translate**
-A steganographic text encryption and translation utility for *Star Resonance*.
+[**phiyuki/BPSR-translate**](https://github.com/phiyuki/BPSR-translate)
+- A steganographic text encryption and translation utility for *Star Resonance*.
 
 * Uses zero-width characters for invisible data embedding, ensuring secure, hidden message transfer.
 * Every encryption produces unique randomized results, enhancing data obfuscation.
@@ -266,8 +266,8 @@ A steganographic text encryption and translation utility for *Star Resonance*.
 
 ---
 
-**zaichiki/bpsr_guild_roster**
-A forked version of the *StarResonanceDamageCounter* with added guild management tools.
+[**zaichiki/bpsr_guild_roster**](https://github.com/zaichiki/bpsr_guild_roster)
+- A forked version of the *StarResonanceDamageCounter* with added guild management tools.
 
 * Introduces a Guild Roster window for member tracking, data visualization, and performance analysis.
 * Maintains all original DPS tracking and combat analytics while adding export and management features.
@@ -276,8 +276,8 @@ A forked version of the *StarResonanceDamageCounter* with added guild management
 
 ---
 
-**MrDustyBowl/bpsr-skyward-wind-knight-guide-fr**
-The French-language version of the *Skyward Wind Knight* comprehensive guide.
+[**MrDustyBowl/bpsr-skyward-wind-knight-guide-fr**](https://github.com/MrDustyBowl/bpsr-skyward-wind-knight-guide-fr)
+- The French-language version of the *Skyward Wind Knight* comprehensive guide.
 
 * Offers localized explanations of class builds, wind mechanics, and skill rotations.
 * Helps French-speaking players master aerial combat strategies in *Blue Protocol: Star Resonance*.
