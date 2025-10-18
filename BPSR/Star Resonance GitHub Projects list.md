@@ -165,3 +165,120 @@ Use responsibly and follow the game’s terms of service.
 - Flutter-based project for battle data statistics in Star Resonance.
 - Provides a starting point for building a mobile app with combat data visualization.
 - Includes resources for Flutter development, tutorials, and sample code for beginners.
+
+---
+
+**bk360/BPSR-AutoFisher-V1**
+An automated fishing assistant for *Blue Protocol: Star Resonance (BPSR)*.
+
+* Allows the player to start fishing automatically through a simple Python script (`python main.py`).
+* Detects when the fishing rod breaks and handles the “Continue Fishing” button automatically, reducing manual interaction.
+* Designed for quick setup: navigate to the directory in CMD or PowerShell, and run the main file to begin automation.
+
+---
+
+**Down98/BPSREngPatcher**
+A patching utility to enable English language support for *Blue Protocol: Star Resonance*.
+
+* Requires installation of the .NET 8.0 Runtime environment.
+* Users must place the patcher executable inside the `AppData\LocalLow\bokura\Star\localsave` folder (where `localsave.bytes` exists).
+* Once executed, it modifies local save data to enable English translation, simplifying localization for non-Chinese users.
+
+---
+
+**narrow-gua/BpsrDetector**
+A C#-based packet-sniffing and detection tool for BPSR.
+
+* Inspired by the original open-source project by Dimole (`StarResonanceDamageCounter`).
+* Allows users to monitor BPSR data packets in real time, useful for developers and mod creators analyzing game behavior.
+* Provides a foundation for future tools involving automated performance tracking and data capture.
+
+---
+
+**fishing-dev-sm/bpsr_automodule**
+A comprehensive OCR-powered optimizer for *BPSR* modules and attributes.
+
+* Uses Python, Flask, and OpenCV to analyze screenshots and optimize mod setups.
+* Offers a modern Web UI for drag-and-drop image uploads, real-time recognition, and result visualization.
+* Employs multi-strategy OCR recognition, multi-objective optimization, and intelligent filtering to find best attribute combinations.
+* Cross-platform support for Windows, macOS, and Linux with one-click setup scripts and JSON result exports.
+* Designed for players and theorycrafters seeking efficient builds without manually comparing modules.
+
+---
+
+**scylian/bpsr-autofish**
+A computer vision automation framework tailored for BPSR’s fishing mechanics.
+
+* Implements precise mouse and keyboard control combined with OpenCV-based image detection.
+* Features advanced safety checks, fail-safe conditions, and coordinate validation for reliable automation.
+* Provides modular Python APIs for easy integration into custom scripts, along with over 60 unit tests to ensure robustness.
+* Can be adapted for other automation tasks beyond fishing through its extensible design.
+
+---
+
+**fishing-dev-sm/bpsr_autofishing**
+An improved, vision-based automatic fishing script for *Star Resonance*.
+
+* Uses pixel color analysis (HSV/BGR) to detect bites, reel timing, and “fish escaped” conditions.
+* Adapts to any 16:9 resolution with DPI scaling and automatic region-of-interest (ROI) adjustment.
+* Features dynamic mode switching between fast tapping and stable long-press reeling based on color detection.
+* Includes timeout protection, intelligent recovery (auto-refishing, reconnecting, or re-equipping rods), and detailed logging.
+* Designed to run safely without altering game files or memory, ensuring non-invasive automation.
+
+---
+
+**viemahc/bpsr-countdowns**
+An event countdown tracker for the *Blue Protocol: Star Resonance* community.
+
+* Developed specifically for the STARWIND Guild to monitor upcoming in-game events.
+* Displays real-time countdowns for limited-time content, raids, and special seasonal events.
+* Helps guild members coordinate participation and stay synchronized with in-game schedules.
+
+---
+
+**ArtjomsBogatirjovs/bpsr-fishing**
+An external auto-fishing system for *Star Resonance* based on image recognition.
+
+* Interacts only through the visible game UI using Windows API calls—no game memory or file modifications.
+* Uses AI-based fish detection and auto-casting for accurate and efficient fishing cycles.
+* Compatible with all 16:9 resolutions in both fullscreen and windowed mode.
+* Includes detailed troubleshooting for display settings, antivirus conflicts, and input remapping.
+* Focused on safe, educational use—prohibits any commercial redistribution or paid automation services.
+
+---
+
+**s-now25/bpsr-skyward-guide**
+A detailed gameplay guide focused on the *Skyward Wind Knight* class in *BPSR*.
+
+* Covers builds, rotations, skill setups, and aerial combat strategies.
+* Offers comprehensive explanations for wind-based mechanics and optimal stat balancing.
+* Aimed at helping players maximize airborne combat performance through advanced techniques.
+
+---
+
+**phiyuki/BPSR-translate**
+A steganographic text encryption and translation utility for *Star Resonance*.
+
+* Uses zero-width characters for invisible data embedding, ensuring secure, hidden message transfer.
+* Every encryption produces unique randomized results, enhancing data obfuscation.
+* Can be used online via the “星痕共鸣内鬼翻译器” for quick text conversions.
+* Fully customizable with editable phrases, keys, salts, and versioning for personalized encryption schemes.
+
+---
+
+**zaichiki/bpsr_guild_roster**
+A forked version of the *StarResonanceDamageCounter* with added guild management tools.
+
+* Introduces a Guild Roster window for member tracking, data visualization, and performance analysis.
+* Maintains all original DPS tracking and combat analytics while adding export and management features.
+* Designed to promote transparency, collaboration, and fair play within guilds.
+* Fully open-source under AGPL v3, with respect to community standards and non-invasive data collection.
+
+---
+
+**MrDustyBowl/bpsr-skyward-wind-knight-guide-fr**
+The French-language version of the *Skyward Wind Knight* comprehensive guide.
+
+* Offers localized explanations of class builds, wind mechanics, and skill rotations.
+* Helps French-speaking players master aerial combat strategies in *Blue Protocol: Star Resonance*.
+* Maintains all content depth and quality of the English version with linguistic adaptation for clarity and accessibility.
